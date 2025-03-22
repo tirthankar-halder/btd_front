@@ -1,0 +1,18 @@
+{
+  "name": "btd_front",
+  "version": "1.0.0",
+  "description": "Break Them down",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "btd_front"
+  },
+  "keywords": [
+    "btd"
+  ],
+  "author": "Tirthankar",
+  "license": "MIT"
+}
