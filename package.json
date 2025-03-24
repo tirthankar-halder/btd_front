@@ -4,7 +4,7 @@
   "description": "Break Them down",
   "private": true,
   "scripts": {
-    "start": "vite",
+    "start": "vite preview",
     "build": "vite build",
     "dev": "vite",
     "postinstall": "npm run build"
