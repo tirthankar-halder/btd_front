@@ -93,8 +93,7 @@ function App() {
           <p>No history available.</p>
         )}
       </div>
-    </div>
-       <div>
+      <div>
       <input
         type="number"
         value={numBoxes}
@@ -103,6 +102,7 @@ function App() {
       />
       <FlyInBoxes numBoxes={numBoxes} />
     </div>
+  </div>
   );
 }
 
