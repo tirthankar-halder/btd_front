@@ -37,7 +37,7 @@ const FlyInBoxes = () => {
         <div
           key={boxIndex}
           className="fly-in-box"
-          style={{ top: `${index * 120}px`, animationDelay: `${index * 0.2}s` }}
+          style={{ top: `${index * 10}px`, animationDelay: `${index * 0.2}s` }}
         >
           <span className="box-text">Box {boxIndex + 1}</span>
           <p className="box-description">{messages[boxIndex]}</p>
