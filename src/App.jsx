@@ -81,11 +81,8 @@ function App() {
               <CardContent>
                 <p className="font-semibold">{entry.instruction}</p>
                 <ul className="list-disc ml-4 mt-2">
-                  {entry.steps?.split(",").map((step, i) => (
-                    <li key={i}>{step.trim()}</li>  // Trim removes any accidental spaces
-                   ))}
-                 </ul>
-
+                  {entry.steps}
+                </ul>
                 <p className="text-sm text-gray-500 mt-2">{new Date(entry.created_at).toLocaleString()}</p>
               </CardContent>
             </Card>
@@ -108,3 +105,4 @@ function App() {
 }
 
 export default App;
+
