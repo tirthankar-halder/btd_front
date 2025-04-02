@@ -81,10 +81,11 @@ function App() {
               <CardContent>
                 <p className="font-semibold">{entry.instruction}</p>
                 <ul className="list-disc ml-4 mt-2">
-                  {entry.steps.map((step, i) => (
-                    <li key={i}>{step}</li>
-                  ))}
-                </ul>
+                  {entry.steps?.split("\n").map((step, i) => (
+                    <li key={i}>{step.trim()}</li>  // Trim removes any accidental spaces
+                   ))}
+                 </ul>
+
                 <p className="text-sm text-gray-500 mt-2">{new Date(entry.created_at).toLocaleString()}</p>
               </CardContent>
             </Card>
