@@ -73,7 +73,16 @@ function App() {
           </Card>
         )}
       </div>
-      <div className="mt-8">
+      <div>
+      <input
+        type="number"
+        value={numBoxes}
+        onChange={(e) => setNumBoxes(Number(e.target.value))}
+        min="1"
+      />
+      <FlyInBoxes numBoxes={numBoxes} />
+    </div> 
+     <div className="mt-8">
         <h2 className="text-xl font-semibold">History</h2>
         {history.length > 0 ? (
           history.map((entry, index) => (
@@ -91,15 +100,7 @@ function App() {
           <p>No history available.</p>
         )}
       </div>
-      <div>
-      <input
-        type="number"
-        value={numBoxes}
-        onChange={(e) => setNumBoxes(Number(e.target.value))}
-        min="1"
-      />
-      <FlyInBoxes numBoxes={numBoxes} />
-    </div>
+
   </div>
   );
 }
