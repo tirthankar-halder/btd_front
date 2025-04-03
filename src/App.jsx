@@ -42,8 +42,8 @@ function App() {
     setLoading(false);
   };
 
-  const [numBoxes, setNumBoxes] = useState(5);
- 
+  const [numBoxes, setNumBoxes] = useState(5); 
+  const [fetchedMessages, setMessages] = useState([]);
   return (
     <div className="max-w-2xl mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Instruction Breakdown</h1>
@@ -59,28 +59,19 @@ function App() {
           {loading ? "Processing..." : "Break Down"}
         </Button>
       </form>
-      <div className="mt-4">
-        {steps.length > 0 && (
+      <div>
+         {steps.length > 0 && (
           <Card>
-            <CardContent>
-              <h2 className="text-lg font-semibold">Steps:</h2>
+              <CardContent>
               <ul className="list-decimal ml-4">
                 {steps.map((step, index) => (
                   <li key={index} className="mt-2">{step}</li>
                 ))}
               </ul>
-            </CardContent>
+                <FlyInBoxes fetchedMessages={steps} />
+              </CardContent>
           </Card>
-        )}
-      </div>
-      <div>
-      <input
-        type="number"
-        value={numBoxes}
-        onChange={(e) => setNumBoxes(Number(e.target.value))}
-        min="1"
-      />
-      <FlyInBoxes numBoxes={numBoxes} />
+         )}
     </div> 
      <div className="mt-8">
         <h2 className="text-xl font-semibold">History</h2>
