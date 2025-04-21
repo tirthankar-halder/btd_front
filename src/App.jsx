@@ -5,27 +5,15 @@ import Input from "./components/ui/Input";
 import Card from "./components/ui/Card";
 import CardContent from "./components/ui/CardContent";
 import FlyInBoxes from "./FlyInBoxes";
+import InputDesign from "./components/InputDesign";
 
 const API_BASE_URL = "https://breakthemdown.onrender.com";
 
 function App() {
  const [instruction, setInstruction] = useState("");
   const [steps, setSteps] = useState([]);
-  const [history, setHistory] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    fetchHistory();
-  }, []);
-
-  const fetchHistory = async () => {
-    try {
-      const response = await axios.get(`${API_BASE_URL}/history`);
-      setHistory(response.data);
-    } catch (error) {
-      console.error("Error fetching history", error);
-    }
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,7 +23,6 @@ function App() {
         instruction,
       });
       setSteps(response.data.steps);
-      fetchHistory();
     } catch (error) {
       console.error("Error fetching steps", error);
     }
@@ -45,8 +32,9 @@ function App() {
   const [numBoxes, setNumBoxes] = useState(5); 
   const [fetchedMessages, setMessages] = useState([]);
   return (
-    <div className="max-w-2xl mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Instruction Breakdown</h1>
+  /*  <div className="max-w-2xl mx-auto p-4"> */
+      <InputDesign />
+  /*      <h1 className="text-2xl font-bold mb-4">Instruction Breakdown</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <Input
           type="text"
@@ -93,7 +81,7 @@ function App() {
       </div>
 
   </div>
-  );
+  */ );
 }
 
 export default App;
