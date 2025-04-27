@@ -42,17 +42,17 @@ export const HeroSection: React.FC = () => {
           placeholder="Enter complex Ideas or instructions"
           aria-label="Enter your complex idea or instruction"
         />
-        <button type="submit" disabled={loading} className="px-8 py-4 text-xl font-medium text-black bg-amber-300 rounded-md transition-all cursor-pointer border-[none] duration-[0.2s] ease-[ease] max-sm:w-full">
+        <button type="submit" disabled={loading} className="px-8 py-4 text-xl font-medium text-black bg-amber-300 rounded-md transition-all cursor-pointer duration-[0.2s] ease-[ease] max-sm:w-full">
           {loading ? "Processing..." : "Submit Request"}
         </button>
       </form>
 
         {steps.length > 0 && (
-            <div className="flex gap-4 justify-center max-sm:flex-col max-sm:items-center max-sm:mx-auto max-sm:my-0 max-sm:w-full max-sm:max-w-[600px]">
+            <div className="flex gap-4 border border-solid border-white border-opacity-10 max-sm:flex-col max-sm:items-center max-sm:mx-auto max-sm:my-0 max-sm:w-full max-sm:max-w-[600px]">
                 <h2 className="text-lg font-semibold">
                   Steps:
                 </h2>
-                <ul className="list-decimal ml-4">
+                <ul className="ml-4">
                   {steps.map((step, index) => (
                       <li key={index} className="mt-2">{step}</li>
                   ))}
