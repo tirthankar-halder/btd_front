@@ -52,7 +52,7 @@ export const HeroSection: React.FC = () => {
                 <h2 className="text-lg font-semibold">
                   Steps:
                 </h2>
-                <ul className="ml-4">
+                <ul className="text-left ml-4">
                   {steps.map((step, index) => (
                       <li key={index} className="mt-2">{step}</li>
                   ))}
