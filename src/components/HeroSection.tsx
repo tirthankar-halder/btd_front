@@ -33,7 +33,7 @@ export const HeroSection: React.FC = () => {
         Turn complex Ideas, instructions, habits into clear, doable, steps so
         that they are easy to understand and act on
       </p>
-      <form onSubmit={handleSubmit} className="flex gap-4 justify-center max-sm:flex-col max-sm:items-center max-sm:mx-auto max-sm:my-0 max-sm:w-full max-sm:max-w-[400px]">
+      <form onSubmit={handleSubmit} id="instruct" className="flex gap-4 justify-center max-sm:flex-col max-sm:items-center max-sm:mx-auto max-sm:my-0 max-sm:w-full max-sm:max-w-[400px]">
         <input
           className="px-8 py-4 text-xl font-medium rounded-md border border-solid transition-all bg-white bg-opacity-10 border-white border-opacity-10 duration-[0.2s] ease-[ease] text-slate-300 w-[400px] max-sm:w-full"
           type="text"
@@ -46,6 +46,20 @@ export const HeroSection: React.FC = () => {
           {loading ? "Processing..." : "Submit Request"}
         </button>
       </form>
+
+        {steps.length > 0 && (
+            <div className="flex gap-4 justify-center max-sm:flex-col max-sm:items-center max-sm:mx-auto max-sm:my-0 max-sm:w-full max-sm:max-w-[600px]">
+                <h2 className="text-lg font-semibold">
+                  Steps:
+                </h2>
+                <ul className="list-decimal ml-4">
+                  {steps.map((step, index) => (
+                      <li key={index} className="mt-2">{step}</li>
+                  ))}
+                </ul>
+            </div>
+        )}
+
     </section>
   );
 };
