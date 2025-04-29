@@ -30,7 +30,7 @@ export const Navigation: React.FC<NavigationProps> = ({
           <div className="flex gap-4 items-center">
             <img
               alt="Break Them Down Logo"
-              src="https://cdn.builder.io/api/v1/image/assets%2F41f741e823cc4e94baf452a17e418b14%2F64d1fa73339d488889a943661bfa486c"
+              src="https://cdn.builder.io/api/v1/image/assets%2F41f741e823cc4e94baf452a17e418b14%2Fb2c12481d6a64aa2b592e164ec47be3a"
               className="object-cover overflow-hidden h-20 transition-all cursor-pointer aspect-square duration-[0.3s] ease-[ease] w-[150px]"
             />
           </div>
