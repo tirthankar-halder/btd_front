@@ -1,5 +1,10 @@
 "use client";
 import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import About from "./pages/About";
+import { HowItWorks } from "./pages/HowItWorks";
+import { Feedback } from "./pages/Feedback";
+import ContactUs from "./pages/ContactUs";
 import { Navigation } from "./Navigation";
 import { HeroSection } from "./HeroSection";
 import { FeaturesSection } from "./FeaturesSection";
@@ -41,6 +46,7 @@ const InputDesign: React.FC = () => {
   ];
 
   return (
+      <Router>
     <div className="min-h-screen bg-neutral-900 text-slate-300">
       <Navigation
         isMenuOpen={isMenuOpen}
@@ -49,11 +55,18 @@ const InputDesign: React.FC = () => {
         menuItems={menuItems}
       />
       <main>
-        <HeroSection />
+        <Routes>
+          <Route path="/" element={<HeroSection />} />
+          <Route path="/how-it-works" element={<HowItWorks />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/feedback" element={<Feedback />} />
+          <Route path="/contact" element={<ContactUs />} />
+        </Routes>
         <FeaturesSection />
       </main>
       <Footer />
     </div>
+        </Router>
   );
 };
 

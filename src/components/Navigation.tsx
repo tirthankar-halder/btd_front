@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { Link } from "react-router-dom";
 
 interface MenuItem {
   text: string;
@@ -35,30 +36,16 @@ export const Navigation: React.FC<NavigationProps> = ({
             />
           </div>
           <div className="flex gap-4 max-md:hidden">
-            <a
-              className="text-sm no-underline cursor-pointer pointer-events-auto text-slate-300"
-              href="/"
-            >
-              Home
-            </a>
-            <a
-              className="text-sm no-underline text-slate-300"
-              href="/how-it-works"
-            >
-              How it works
-            </a>
-            <a
-              href="/about"
-              className="text-sm no-underline cursor-pointer pointer-events-auto text-slate-300"
-            >
-              About Us
-            </a>
-            <a
-              className="text-sm no-underline cursor-pointer pointer-events-auto text-slate-300"
-              href="/feedback"
-            >
-              Feedback
-            </a>
+            {menuItems.map((item, index) => (
+                <Link
+                    key={index}
+                    to={item.href}
+                    className="text-sm no-underline text-slate-300 cursor-pointer pointer-events-auto"
+                    onClick={closeMenu}
+                >
+                  {item.text}
+                </Link>
+            ))}
           </div>
         </div>
         <div className="flex gap-4 items-center max-md:flex max-md:justify-end max-md:w-full">
