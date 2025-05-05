@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./pages/About";
-import { HowItWorks } from "./pages/HowItWorks";
+import HowItWorks from "./pages/HowItWorks";
 import { Feedback } from "./pages/Feedback";
 import ContactUs from "./pages/ContactUs";
 import { Navigation } from "./Navigation";
