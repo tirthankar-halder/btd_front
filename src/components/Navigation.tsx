@@ -106,14 +106,14 @@ export const Navigation: React.FC<NavigationProps> = ({
           aria-label="Mobile menu"
         >
           {menuItems?.map((item, index) => (
-            <a
+            <Link
               className="flex items-center px-6 py-4 text-2xl tracking-normal no-underline rounded-lg transition-all duration-[0.2s] ease-[ease] font-[510] text-neutral-400"
               key={index}
-              href={item.href}
+              to={item.href}
               onClick={closeMenu}
             >
               {item.text}
-            </a>
+            </Link>
           ))}
           <div className="mx-4 my-2 border-t border-solid border-t-white border-t-opacity-10" />
         </div>
