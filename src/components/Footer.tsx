@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
         </a>
         <a
           className="text-sm no-underline cursor-pointer pointer-events-auto duration-[0.2s] font-[510] text-neutral-400 transition-[color]"
-          href="#"
+          href="/contact"
         >
           Contact Us
         </a>
