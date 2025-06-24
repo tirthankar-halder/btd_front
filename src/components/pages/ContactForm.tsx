@@ -22,6 +22,11 @@ export const ContactForm: React.FC = () => {
       return;
     }
     setStatus("Sending...");
+    const messageWithNote = `${formData.message}\n<This message is from Web App>`;
+    const payload = {
+          ...formData,
+          message: messageWithNote,
+        };
 
     try {
       const response = await fetch("https://breakthemdown.onrender.com/contact", {
@@ -29,7 +34,7 @@ export const ContactForm: React.FC = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
 
       if (response.ok) {
@@ -43,7 +48,7 @@ export const ContactForm: React.FC = () => {
       setStatus(`Network error: ${error.message}`);
     }
 
-    console.log("Form submitted:", formData);
+    console.log("Form submitted:", payload);
   };
 
   return (
