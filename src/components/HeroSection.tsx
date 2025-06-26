@@ -9,9 +9,12 @@ export const HeroSection: React.FC = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    const region = new Intl.Locale(navigator.language).region;
     try {
       const response = await axios.post(`${API_BASE_URL}/breakdown`, {
         instruction,
+        source: "WebApp",
+        region,
       });
       setSteps(response.data.steps);
     } catch (error) {
